@@ -8,8 +8,8 @@ test:
     mov x11, xzr // indice i = 0
     mov x12, xzr // indice j = 0
 
-    mov x3, 0xfffffffff // INF
-    mov x4, 0x0 // contador
+    ldr x3, =0xfffffffff // INF
+    ldr x4, =0x0 // contador
     
 l1:
     add x13, x11, x10
@@ -44,7 +44,7 @@ CompMin:
     b.le VMinMai
     cmp w16, w14
     b.eq contadorMin
-    b compMin
+    b CompMin
 
 VMinMai: //transforma a letra em minuscula e compara 
     add w16, w16, #32
